@@ -1,0 +1,98 @@
+:root {
+  color-scheme: light dark;
+  --bg: #fff;
+  --text: #1f1f1f;
+  --muted: #6b6b6b;
+  --line: #e4e4e4;
+  --code: #f4f4f4;
+  --link: #1a5fb4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161616;
+    --text: #e6e6e6;
+    --muted: #a0a0a0;
+    --line: #333;
+    --code: #242424;
+    --link: #8ab8f0;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  display: flex;
+  gap: 3rem;
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.75 system-ui, -apple-system, "Segoe UI", "Malgun Gothic", sans-serif;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+nav { flex: 0 0 11rem; }
+main { flex: 1; min-width: 0; }
+
+a { color: var(--link); }
+
+.site {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+#q {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: .3rem .5rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: .9rem;
+}
+
+#pages { margin: 0; padding: 0; list-style: none; }
+#pages a { color: var(--muted); text-decoration: none; }
+#pages a:hover, #pages a[aria-current] { color: var(--text); }
+#pages a[aria-current] { font-weight: 600; }
+
+h1 { margin: 0 0 1.5rem; font-size: 1.8rem; line-height: 1.3; }
+h2 { margin: 2.25rem 0 .75rem; font-size: 1.3rem; }
+h3 { margin: 1.75rem 0 .5rem; font-size: 1.05rem; }
+
+hr { border: 0; border-top: 1px solid var(--line); }
+img { max-width: 100%; }
+
+blockquote {
+  margin: 1rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--line);
+  color: var(--muted);
+}
+
+code {
+  padding: .1em .3em;
+  border-radius: 3px;
+  background: var(--code);
+  font: .9em ui-monospace, Consolas, monospace;
+}
+
+pre { padding: 1rem; border-radius: 4px; background: var(--code); overflow-x: auto; }
+pre code { padding: 0; }
+
+table { display: block; border-collapse: collapse; overflow-x: auto; }
+th, td { padding: .4rem .75rem; border: 1px solid var(--line); text-align: left; }
+
+@media (max-width: 42rem) {
+  body { display: block; padding: 1.5rem 1rem; }
+  nav { margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
+  #pages { display: flex; flex-wrap: wrap; gap: .25rem 1rem; }
+}

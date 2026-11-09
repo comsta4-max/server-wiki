@@ -1,0 +1,11 @@
+{
+  "name": "server-wiki",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "dependencies": {
+    "markdown-it": "^15.0.3"
+  }
+}
